@@ -1,7 +1,7 @@
 # rootstock_RNA-seq
-#Tophat workflow
-Requires bowtie 2 (I think) and 
-#tophat
+##Tophat workflow
+Requires bowtie 2 (I think)
+###tophat
 ./tophat.sh PE_F.fa PE_R.fa bowtie_index outdir -I (minimum fragment length) -X (maximum fragment length)
 ```shell
 ./tophat.sh /home/deakig/projects/apple_rootstock/rna-seq/RNAseq_3/02-RNA_L1_1.fq.trim /home/deakig/projects/apple_rootstock/rna-seq/RNAseq_3/02-RNA_L1_2.fq.trim /home/groups/harrisonlab/project_files/rootstock_genetics/ref/v1/Md /home/deakig/projects/apple_rootstock/rna-seq/tophat/02 0 500
@@ -17,7 +17,7 @@ Requires bowtie 2 (I think) and
 ./tophat.sh /home/deakig/projects/apple_rootstock/rna-seq/RNAseq_1/12-RNA_L1_1.fq.trim /home/deakig/projects/apple_rootstock/rna-seq/RNAseq_1/12-RNA_L1_2.fq.trim /home/groups/harrisonlab/project_files/rootstock_genetics/ref/v1/Md /home/deakig/projects/apple_rootstock/rna-seq/tophat/12 0 500
 ./tophat.sh /home/deakig/projects/apple_rootstock/rna-seq/RNAseq_1/13-RNA_L1_1.fq.trim /home/deakig/projects/apple_rootstock/rna-seq/RNAseq_1/13-RNA_L1_2.fq.trim /home/groups/harrisonlab/project_files/rootstock_genetics/ref/v1/Md /home/deakig/projects/apple_rootstock/rna-seq/tophat/13 0 500
 ```
-#cufflinks
+###cufflinks
 ./cufflinks tophat.bam outdir num_processors  
 ```shell
 ./cufflinks.sh /home/deakig/projects/apple_rootstock/rna-seq/tophat/02/tophat_out/accepted_hits.bam /home/deakig/projects/apple_rootstock/rna-seq/cufflinks/02 8
@@ -33,12 +33,12 @@ Requires bowtie 2 (I think) and
 ./cufflinks.sh /home/deakig/projects/apple_rootstock/rna-seq/tophat/12/tophat_out/accepted_hits.bam /home/deakig/projects/apple_rootstock/rna-seq/cufflinks/12 8
 ./cufflinks.sh /home/deakig/projects/apple_rootstock/rna-seq/tophat/13/tophat_out/accepted_hits.bam /home/deakig/projects/apple_rootstock/rna-seq/cufflinks/13 8
 ```
-#cuffmerge
+###cuffmerge
 gtf_files.txt contains a list of paths to the cufflinks transcripts.gtf files 
 ```shell
 cuffmerge -g apple_v1_transcripts.gtf -o merged.gtf -p 16 -s /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/Malus_x_domestica.v1.0-primary.pseudo.fa gtf_files.txt 
 ```
-#cuffquant
+###cuffquant
 ./cuffquant tophat.bam merged.gtf outdir
 ```shell
 ./cuffquant.sh /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/tophat/02/tophat_out/accepted_hits.bam /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cuffmerge/merged.gtf /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cuffquant/02
@@ -54,9 +54,9 @@ cuffmerge -g apple_v1_transcripts.gtf -o merged.gtf -p 16 -s /home/deakig/projec
 ./cuffquant.sh /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/tophat/12/tophat_out/accepted_hits.bam /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cuffmerge/merged.gtf /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cuffquant/12
 ./cuffquant.sh /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/tophat/13/tophat_out/accepted_hits.bam /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cuffmerge/merged.gtf /home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cuffquant/13
 ```
-#cuffdiff
+###cuffdiff
 ```shell
 cuffdiff -o cuffdiff -p 16 -b Malus_x_domestica.v1.0-primary.pseudo.fa -u cuffmerge/merged.gtf -L "M27B","M116B" cuffquant/03/abundances.cxb,cuffquant/05/abundances.cxb,cuffquant/07/abundances.cxb cuffquant/09/abundances.cxb,cuffquant/11/abundances.cxb,cuffquant/13/abundances.cxb
 ```
-#cummeRbund
-Rscript cumme.R
+###cummeRbund
+R scripts contained in cumme.R
