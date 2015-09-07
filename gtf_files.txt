@@ -1,0 +1,12 @@
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/02/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/03/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/04/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/05/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/06/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/07/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/08/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/09/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/10/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/11/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/12/transcripts.gtf
+/home/deakig/projects/apple_rootstock/rna-seq/cuff_workflow/cufflinks/13/transcripts.gtf
