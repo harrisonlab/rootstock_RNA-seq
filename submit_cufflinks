@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Cufflinks
+#$ -S /bin/bash
+#$ -cwd
+#$ -l virtual_free=8G
+
+WORK_DIR=$TMPDIR
+A=$1
+DEST=$2
+PROC=$3
+
+echo "RUnning cufflinks with $A on $PROC proccessors - output redirected to $DEST"
+
+cd $WORK_DIR
+
+cufflinks $A -p $3
+
+cp * $DEST/.
