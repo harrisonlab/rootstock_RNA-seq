@@ -70,3 +70,23 @@ cuffdiff -o cuffdiff -p 16 -b Malus_x_domestica.v1.0-primary.pseudo.fa -u cuffme
 ```
 ###cummeRbund
 R scripts contained in cumme.R
+
+
+#De novo assembly with Trinity
+
+##Installing Trinity
+download and install from:
+https://github.com/trinityrnaseq/trinityrnaseq/wiki
+
+Requires bowtie 1
+
+##configure for SGE cluster
+created file SGE.conf with settings appropriate for our environment
+
+##Assemble
+Created scripts assembly.sh and submit_assembly.sh
+```shell
+./assmbly.sh somefile.fq trinity_outdir
+```
+
+
