@@ -71,13 +71,15 @@ cuffdiff -o cuffdiff -p 16 -b Malus_x_domestica.v1.0-primary.pseudo.fa -u cuffme
 ###cummeRbund
 R scripts contained in cumme.R
 
-cummeRbund requires Rcurl to be installed - which depends on libcurl. This can be a bit of a pain to get working, but the below might help...
+cummeRbund requires Rcurl to be installed - which depends on libcurl. This can be a challenging to get working without sudo (the make fails in our environment), but the below might help...
 
 ```shell
 apt-get source libcurl4-gnutls-dev
 cd curl-7.26.0/
 ./configure --prefix=$HOME/usr/local
-cp lib.libs/libcurl.so.4.2.0 $HOME/usr/local/.
+# make
+
+cp lib/.libs/libcurl.so.4.2.0 $HOME/usr/local/.
 cp -r include/curl $HOME/usr/local/include/
 cp libcurl.pc $HOME/usr/local/lib/pkgconfig/.
 
@@ -88,13 +90,9 @@ ln -S $HOME/usr/local/libcurl.so.4 $HOME/usr/local/libcurl.so.4.2.0
 PKG_CONFIG_PATH=$HOME//usr/local/lib/pkgconfig/
 export PKG_CONFIG_PATH
 pkg-config libcurl --libs
-R CMD install.packages(Rcurl) # or something like this - can't remeber how to use R CMD, could just start an R session. 
-
+R CMD INSTALL Rcurl # or something like this - can't remeber how to use R CMD
+# could just start an R session then install.packages(Rcurl)
 ```
-
-
-
-
 #De novo assembly with Trinity
 
 ##Installing Trinity
